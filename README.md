@@ -9,3 +9,9 @@ npm i
 npx tsc index.ts
 bash ./modulize.sh
 ```
+
+## Run without cloning and building the project
+
+See an equivalent demo on StackBlitz.com:
+
+- [Not working version](https://typescript-frmung.stackblitz.io)
