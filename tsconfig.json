@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "module": "esnext",
+    "moduleResolution": "node",
+    "target": "esnext",
+    "allowJs": true,
+    "strict": true,
+    // "exactOptionalPropertyTypes": true,
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    // "outDir": "./dist",
+    "baseUrl": "./",
+    // noEmit - Snowpack builds (emits) files, not tsc.
+    // "types": ["snowpack-env", "node"],
+    "baseUrl": ".",
+    "incremental": true
+  }
+}

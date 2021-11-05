@@ -1,0 +1,30 @@
+{
+  "name": "hyperapp-nested-component",
+  "version": "1.0.0",
+  "description": "Example for https://github.com/jorgebucaran/hyperapp/issues/1048",
+  "type": "module",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/igrep/hyperapp-nested-component.git"
+  },
+  "keywords": [
+    "hyperapp"
+  ],
+  "author": "YAMAMOTO Yuji",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/igrep/hyperapp-nested-component/issues"
+  },
+  "homepage": "https://github.com/igrep/hyperapp-nested-component#readme",
+  "dependencies": {
+    "hyperapp": "^2.0.19"
+  },
+  "devDependencies": {
+    "typescript": "^4.4.4"
+  }
+}
