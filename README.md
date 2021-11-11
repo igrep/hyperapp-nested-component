@@ -6,8 +6,7 @@ Port [Example of Sibling/Nested component communication in elm](https://github.c
 
 ```bash
 npm i
-npx tsc index.ts
-bash ./modulize.sh
+make
 ```
 
 ## Run without cloning and building the project
