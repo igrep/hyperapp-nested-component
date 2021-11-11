@@ -37,9 +37,9 @@ namespace Counter {
     return h("div",
       { style: { "display": "inline-block", "margin-right": "1rem" } as any },
       [
-        h("button", { onClick: Increment }, text("+")),
+        h("button", { onclick: Increment }, text("+")),
         h("div", { style: { color } }, text(`${model.num}`)),
-        h("button", { onClick: Decrement }, text("-")),
+        h("button", { onclick: Decrement }, text("-")),
         h("div", {}, text(`btn click: ${model.btnClicks}`)),
       ]
     );
