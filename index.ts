@@ -260,7 +260,7 @@ function UpdateWithPair1(model: Model, newPair1: Pair.Model): Model {
 
 function UpdateWithPair2(model: Model, newPair2: Pair.Model): Model {
   const totals = Totals.UpdateRed(model.totals, Pair.getRedNum(newPair2));
-  const pair1 = Pair.UpdateRed(model.pair2, Pair.getRedNum(newPair2));
+  const pair1 = Pair.UpdateRed(model.pair1, Pair.getRedNum(newPair2));
   return {
     pair1,
     pair2: newPair2,
