@@ -1,6 +1,6 @@
 import { h, text, app, Action, ElementVNode, Dispatchable, MaybeEffect, Effect, Dispatch, MaybeVNode, VNode } from 'hyperapp';
 
-const SSR_NODE = 1;
+const TEXT_NODE = 3;
 
 type Indexable = string | unknown[] | Record<string, any>
 
@@ -124,7 +124,7 @@ function mapMaybeVNode<S1, S2>(
   f12: (state1: S1) => S2,
   f21: (state2: S2) => S1,
 ): MaybeVNode<S2> {
-  if (vnode && vnode !== true && vnode.type === SSR_NODE){
+  if (vnode && vnode !== true && vnode.type !== TEXT_NODE){
     return mapElementVNode(vnode, f12, f21);
   }
   return vnode as MaybeVNode<S2>
@@ -135,7 +135,7 @@ function mapVNode<S1, S2>(
   f12: (state1: S1) => S2,
   f21: (state2: S2) => S1,
 ): VNode<S2> {
-  if (vnode.type === SSR_NODE){
+  if (vnode.type !== TEXT_NODE){
     return mapElementVNode(vnode, f12, f21);
   }
   return vnode as VNode<S2>
