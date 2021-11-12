@@ -14,3 +14,4 @@ make
 See an equivalent demo on StackBlitz.com:
 
 - [Not working version](https://typescript-frmung.stackblitz.io)
+- [Working version 1](https://typescript-dpfbvm.stackblitz.io/)
