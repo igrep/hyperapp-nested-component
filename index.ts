@@ -1,6 +1,5 @@
 import { h, text, app, Action, ElementVNode } from 'hyperapp';
 
-// C should be an ActionOrActionWithPayload
 export type LiftAction<C, P> = (childAction: C) => Action<P>
 
 // Utility function that isn't used in this app, but would be helpful!
