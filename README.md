@@ -18,7 +18,7 @@ export view(model: Child): ElementVNode<Child> {
 }
 ```
 
-Wrapping the `Child` component doesn't work:
+And we want to build the `Parent` below, which contains the `Child` components. But wrapping up the `Child` components doesn't work:
 
 parent.ts:
 
@@ -47,11 +47,11 @@ app({
 })
 ```
 
-Because `Child.map` returns `ElementVNode<Child>`, while parent's `view` function returns `ElementVNode<Parent>` since the event handlers passed to `h` function (`UpdateChild` and `UpdateParent`) are for different models. In addition to the type mismatch, this example lacks essential information: **To which `Child` (`child1`? Or `child2`?) hyperapp applies the action dispatched from the `Child` components**.
+Because `Child.map` returns `ElementVNode<Child>`, while parent's `view` function returns `ElementVNode<Parent>` since the event handlers passed to `h` function (`UpdateChild` and `UpdateParent`) dispatch actions for different models. And in addition to the type mismatch, the `view` function of `Parent` lacks essential information: **To which `Child` of `Parent` hyperapp applies actions dispatched from the `Child` components** (i.e. `child1`? or `child2`?).
 
 ## Solution
 
-In Elm, we usually use `Html.map` to convert child components' `Msg` into their parents' (see the [original example](https://github.com/afcastano/elm-nested-component-communication) for details). But hyperapp doesn't have such a function. [I once implemented such a function](https://github.com/igrep/hyperapp-nested-component/blob/fd202ebd3174389cb7e957c6bf88b8963a01b984/index.ts#L7-L142), but I found I shouldn't propose this change to keep hyperapp simple. Instead of the `Html.map` equivalent, I adopted simpler (but with more boilerplate) way:
+In Elm, we usually use `Html.map` to convert child components' `Msg` into their parents' (see the [original example](https://github.com/afcastano/elm-nested-component-communication) for details). But hyperapp doesn't provide such a function. [I once implemented such a function](https://github.com/igrep/hyperapp-nested-component/blob/fd202ebd3174389cb7e957c6bf88b8963a01b984/index.ts#L7-L142), but I found I shouldn't propose this change to keep hyperapp simple. Instead of the `Html.map` equivalent, I adopted a simpler (but with more boilerplate) way:
 
 child.ts:
 
@@ -109,7 +109,7 @@ app({
 })
 ```
 
-In short, pass functions to handle `Child` components' action (`Child1` and `Child2` in this case) down to the `Child` components. This is somewhat cumbersome, but simple and works perfectly!
+In short, pass functions to handle `Child` components' action (`Child1` and `Child2` in this case) down to the `Child` components. This is somewhat cumbersome, but simple and works perfectly with the current hyperapp!
 
 ## About the Example App
 
