@@ -109,7 +109,9 @@ app({
 })
 ```
 
-In short, pass functions to handle `Child` components' action (`Child1` and `Child2` in this case) down to the `Child` components. This is somewhat cumbersome, but simple and works perfectly with the current hyperapp!
+In short, pass `LiftAction` functions to handle `Child` components' action (`Child1` and `Child2` in this case) down to the `Child` components. `LiftAction` here transforms `Child`'s action into `Parent`'s action by defining how to apply the given `Child`'s action and how to set the result back to `Parent`'s property (e.g. `Child1` applies `Child`'s action to `Parent`'s `child1`, then set the result to `child1`).
+
+This is somewhat cumbersome, but simple and works perfectly with the current hyperapp!
 
 ## About the Example App
 
